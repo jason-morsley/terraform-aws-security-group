@@ -7,8 +7,7 @@
 
 module "rke-vpc" {
 
-  source = "./../../../terraform-aws-vpc"
-  #source = "jason-morsley/terraform-aws-vpc"
+  source = "jason-morsley/vpc/aws"
 
   name = "rke-example"
 

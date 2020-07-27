@@ -7,7 +7,7 @@
 
 module "simple-ec2" {
 
-  source = "jason-morsley/ec2/aws"
+  source = "./../../../terraform-aws-ec2"
 
   name = "example"
 

@@ -9,7 +9,7 @@ For examples how to use, please refer to the examples folder.
 ```
 module "allow-al" {
 
-  source = "jason-morsley/security-group/aws"
+  source = "jason-morsley/aws-security-group"
 
   name = "example"
 

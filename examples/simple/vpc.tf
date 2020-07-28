@@ -8,14 +8,14 @@
 module "simple-vpc" {
 
   source = "./../../../terraform-aws-vpc"
-  #source = "jason-morsley/terraform-aws-vpc"
+  #source = "john-morsley/vpc/aws"
 
-  name = "simple-example"
+  name = var.vpc_name
 
-  vpc_cidr = "10.0.0.0/16" # 65,531 (65,536 possible - 5 reserved by AWS)
+  vpc_cidr = var.vpc_cidr
 
-  public_subnet_cidrs = ["10.0.0.0/24"] # 251 (256 possible - 5 reserved by AWS)
+  public_subnet_cidrs = var.public_subnet_cidrs
 
-  availability_zones = [ data.aws_availability_zones.available.names[0] ]
+  availability_zones = [data.aws_availability_zones.available.names[0]]
 
 }

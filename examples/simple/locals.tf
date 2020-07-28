@@ -6,7 +6,7 @@
 #     |______\___/ \___\__,_|_|___/
 
 locals {
-  
+
   name = "${var.name}-${random_pet.this.id}"
-  
+
 }

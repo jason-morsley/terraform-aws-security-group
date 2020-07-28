@@ -16,36 +16,11 @@
 module "simple-security-group" {
 
   source = "./../../../terraform-aws-security-group"
-  #source = "jason-morsley/terraform-aws-security-group"
+  #source = "jason-morsley/security-group/aws"
 
-  name = local.name
+  name        = local.name
   description = "To allow web traffic."
 
   vpc_id = module.simple-vpc.id
 
-  ingress = [
-    {
-      description = "Allow Web (insecure)"
-      from_port   = 80
-      to_port     = 80
-      protocol    = "tcp"
-      cidr_blocks = [ var.all_cidr_block ]
-    },
-    {
-      description = "Allow Web (secure)"
-      from_port   = 443
-      to_port     = 443
-      protocol    = "tcp"
-      cidr_blocks = [ var.all_cidr_block ]
-    }
-  ]
-
-  egress = [{
-    description = "Allow All"
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = [ var.all_cidr_block ]
-  }]
-  
 }
